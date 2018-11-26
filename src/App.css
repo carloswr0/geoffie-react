@@ -1,0 +1,11 @@
+.mobile-container {
+    height: 100vh;
+}
+
+.mobile-container html, body {
+    background-color: var(--color-blue);
+}
+
+.mobile-container .game-lobby img {
+    max-height: 190px;
+}

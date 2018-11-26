@@ -1,0 +1,58 @@
+.game-lobby {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: var(--color-blue);
+}
+
+.geoffie-landing-header{
+    margin-top: 1rem;
+}
+
+.upper-menu {
+    margin: 2rem 0 0 0;
+    width: 100%;
+    padding: 0 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--color-navy);
+}
+
+.menu {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.menu-option-container {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: var(--color-gray);
+    height: 3rem;
+    border: 3px solid var(--color-gray);
+    margin: 5px 0;
+    transition: all 0.1s;
+    cursor: pointer;
+}
+
+.menu-option-container:hover {
+    background-color: #00000075;
+}
+
+.menu-option-container:active {
+    border-color: var(--color-navy);
+}
+
+.bottom-menu {
+    width: 100%;
+    text-align: center;
+    color: var(--color-navy);
+}
