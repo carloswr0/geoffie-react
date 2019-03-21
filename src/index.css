@@ -21,25 +21,3 @@ a {
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
 }
-
-/*
-@media all and (min-width: 50px)   {  :not(.wrapper) > .capitals-question-span, .capitals-question-h1, .capitals-answers  { font-size:0.1rem!important;  } }
-@media all and (min-width: 100px)  {  :not(.wrapper) >.capitals-question-span, .capitals-question-h1, .capitals-answers  { font-size:0.2rem!important;  } }
-@media all and (min-width: 200px)  {  :not(.wrapper) > .capitals-question-span, .capitals-question-h1, .capitals-answers  { font-size:0.4rem!important;  } }
-@media all and (min-width: 300px)  {  :not(.wrapper) > .capitals-question-span, .capitals-question-h1, .capitals-answers  { font-size:0.6rem!important;  } }
-@media all and (min-width: 400px)  {  :not(.wrapper) > .capitals-question-span, .capitals-question-h1, .capitals-answers  { font-size:0.8rem!important;  } }
-@media all and (min-width: 500px)  {  :not(.wrapper) > .capitals-question-span, .capitals-question-h1, .capitals-answers  { font-size:1.0rem!important;  } }
-@media all and (min-width: 600px)  {  :not(.wrapper) > .capitals-question-span, .capitals-question-h1, .capitals-answers  { font-size:1.2rem!important;  } }
-@media all and (min-width: 700px)  {  :not(.wrapper) > .capitals-question-span, .capitals-question-h1, .capitals-answers  { font-size:1.4rem!important;  } }
-@media all and (min-width: 800px)  {  :not(.wrapper) > .capitals-question-span, .capitals-question-h1, .capitals-answers  { font-size:1.6rem!important;  } }
-@media all and (min-width: 900px)  {  :not(.wrapper) > .capitals-question-span, .capitals-question-h1, .capitals-answers  { font-size:1.8rem!important;  } }
-@media all and (min-width: 1000px) {  :not(.wrapper) > .capitals-question-span, .capitals-question-h1, .capitals-answers  { font-size:2.0rem!important;  } }
-@media all and (min-width: 1100px) {  :not(.wrapper) > .capitals-question-span, .capitals-question-h1, .capitals-answers  { font-size:2.2rem!important;  } }
-@media all and (min-width: 1200px) {  :not(.wrapper) > .capitals-question-span, .capitals-question-h1, .capitals-answers  { font-size:2.4rem!important;  } }
-@media all and (min-width: 1300px) {  :not(.wrapper) > .capitals-question-span, .capitals-question-h1, .capitals-answers  { font-size:2.6rem!important;  } }
-@media all and (min-width: 1400px) {  :not(.wrapper) > .capitals-question-span, .capitals-question-h1, .capitals-answers  { font-size:2.8rem!important;  } }
-@media all and (min-width: 1500px) {  :not(.wrapper) > .capitals-question-span, .capitals-question-h1, .capitals-answers  { font-size:3.0rem!important;  } }
-@media all and (min-width: 1500px) {  :not(.wrapper) > .capitals-question-span, .capitals-question-h1, .capitals-answers  { font-size:3.2rem!important;  } }
-@media all and (min-width: 1600px) {  :not(.wrapper) > .capitals-question-span, .capitals-question-h1, .capitals-answers  { font-size:3.4rem!important;  } }
-@media all and (min-width: 1700px) {  :not(.wrapper) > .capitals-question-span, .capitals-question-h1, .capitals-answers  { font-size:3.6rem!important;  } } 
-*/
