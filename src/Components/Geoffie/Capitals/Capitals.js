@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import GameOver from './GameOver/GameOver';
 import './Capitals.css';
 
-
   class Capitals extends Component {
     constructor(props) {
     super(props);
@@ -14,27 +13,25 @@ import './Capitals.css';
         roundsCreated: false,
         points: 0,
         disableAnswer: false,
-        answeredQuestionsStyle: [
-          "",
-          "",
-          "",
-          "",
-        ],
+        answeredQuestionsStyle: ["","","","",],
         gameOverModalOpened: false,
       };
     }
-   
     componentDidMount() {
-      this.setTimers(true); // <- set time countdown
+      this.setTimers(true); // <- Sets time countdown.
+      
       const countries = this.props.props.data.filter(country => 
         country.capital !== ""
-      ); //<- ALL 250 Countries, BUT filtered countries without capitals.
+      ); //<- Has 250 countries, But filters countries without capitals.
+
       const regionsInPlay = this.props.props.regionsToPlay.filter(region => 
           region.enabled === true
-      ); //<- Continents Selected (Settings)
+      ); //<- Filters countries from continents that we're not selected (Settings)
+
       const totalCounstriesInPlay = []; //<- Empty Total-Countries-To-Play array. (Soon to be UNSELECTED-Countries)
       const selectedCountriesToPlay = []; //<- Empty SELECTED-Countries-To-Play array. 
       const questionsQuantity = this.props.props.questionsToPlay; //<- Quantity of questions (Settings)
+      
       regionsInPlay.map(region => {
         let result = countries.filter(e => e.region === region.name); //<- Grabs all countries from one continent.
         result.forEach(element => {
@@ -42,6 +39,7 @@ import './Capitals.css';
         });
         return null
       });
+
       for (let i = 0; i <= questionsQuantity-1; i++) {
         //BELOW: Picks 1 random-country.
         let randomCountry = totalCounstriesInPlay[Math.floor(Math.random()*totalCounstriesInPlay.length)];
@@ -51,8 +49,8 @@ import './Capitals.css';
         totalCounstriesInPlay.splice(indexOfSelectedCountry,1);
         //BELOW: Inserts that 1 random-country to SelectedCountries array.
         selectedCountriesToPlay.push(randomCountry);
-      
       }
+
       this.buildRoundsToPlay(totalCounstriesInPlay, selectedCountriesToPlay);
     }
 
@@ -61,36 +59,36 @@ import './Capitals.css';
     }
 
     buildRoundsToPlay(totalCounstriesInPlay, selectedCountriesToPlay) {
-      //BELOW: Merges both selected and unselected countries.
+      //BELOW THIS LINE: Merges both selected and unselected countries.
       const allCountries = totalCounstriesInPlay.concat(selectedCountriesToPlay);
       
-      //BELOW: Creates 2 empty array, one to store 3 wrong answers and another to create the round scheme.
+      //BELOW THIS LINE: Creates 2 empty array, one to store 3 wrong answers and another to create the round scheme.
       let wrongQuestionsArray = [];
       const roundsPlaceholder = [];
 
-      //BELOW: for every round (quantity of questions, do...)
+      //BELOW THIS LINE: for every round (quantity of questions, do...)
       selectedCountriesToPlay.forEach(
         (country, index) => {
-          //BELOW: REMOVE the correct answer from possible questions array.)
+          //BELOW THIS LINE: REMOVE the correct answer from possible questions array.)
           let allButTheSelectedCountry = allCountries.filter((e) => {
             return e.name !== country.name
           });
-          //BELOW: for 3 items do...)
+          //BELOW THIS LINE: for 3 items do...)
           for (let i = 0; i <= 2; i++) {
-            //BELOW: Picks 1 random-country.
+            //BELOW THIS LINE: Picks 1 random-country.
             const randomWrongQuestion = allButTheSelectedCountry[Math.floor(Math.random()*allButTheSelectedCountry.length)];
-            //BELOW: Grabs that 1 random-country index.
+            //BELOW THIS LINE: Grabs that 1 random-country index.
             const index = allButTheSelectedCountry.findIndex(country => country.name === randomWrongQuestion.name);
-            //BELOW: Removes that 1 random-country from the totalCountries array so it wont be picked again.
+            //BELOW THIS LINE: Removes that 1 random-country from the totalCountries array so it wont be picked again.
             allButTheSelectedCountry.splice(index,1);
-            //BELOW: Inserts that 1 random-country to wrongQuestionsArray.
+            //BELOW THIS LINE: Inserts that 1 random-country to wrongQuestionsArray.
             wrongQuestionsArray.push(randomWrongQuestion); 
           }
-          //BELOW: RESETS the WrongQuestionArray.
+          //BELOW THIS LINE: RESETS the WrongQuestionArray.
           allButTheSelectedCountry = [...allCountries]; 
-          //BELOW: Inserts the CORRECT Answer inside the wrongQuestionsArray.
+          //BELOW THIS LINE: Inserts the CORRECT Answer inside the wrongQuestionsArray.
           wrongQuestionsArray.push(country);
-          //BELOW: and finally, pushes the created round inside the total rounds array.
+          //BELOW THIS LINE: and finally, pushes the created round inside the total rounds array.
           roundsPlaceholder.push({
             round: index,
             question: country.name,
